@@ -14,7 +14,7 @@ function Footer() {
         <div className="flex items-center gap-2 justify-center select-none text-gray-400">
           <span className="flex-1 text-gray-400">───────────</span>
           <span className="text-sm ">✦</span>
-          <span className="text-sm w-full md:text-md text-gray-400 text-center">
+          <span className="text-xs w-full md:text-md text-gray-400 text-center">
             You miss 100% of shots you don&apos;t take
           </span>
           <span className="text-sm">✦</span>

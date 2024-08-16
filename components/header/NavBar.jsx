@@ -1,12 +1,29 @@
+"use client";
 import DarkLightMode from "@/components/header/DarkLightMode";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 function NavBar() {
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div className="w-full flex justify-center h-16 mt-7">
-      <div className="max-w-3xl flex justify-between w-11/12 md:w-full bg-white/20 shadow-lg ring-1 ring-black/5 p-4 rounded-xl">
+    <div className={`w-full flex justify-center h-16 mt-3`}>
+      <div
+        className={`max-w-3xl flex justify-between w-11/12 md:w-full bg-white/20 shadow-lg ring-1 ring-black/5 p-4 rounded-xl ${
+          isSticky
+            ? "fixed top-3 h-16 shadow-lg bg-white/30 backdrop-blur-lg z-10 transition-all ease-in-out"
+            : ""
+        }`}
+      >
         <div className="flex justify-between w-full gap-24">
           <div className="logo flex justify-start items-center w-full cursor-pointer">
             <Link href={"/"}>
@@ -32,9 +49,9 @@ function NavBar() {
             <div className="cursor-pointer font-semibold font-inter">
               timeline
             </div>
-            <Link href={"/story"}>
+            <Link href={"/about"}>
               <div className="cursor-pointer font-semibold font-inter">
-                story
+                about
               </div>
             </Link>
             <Link href={"/gallery"}>

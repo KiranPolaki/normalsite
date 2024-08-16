@@ -3,12 +3,12 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
 import Link from "next/link";
 
-function Story() {
+function About() {
   return (
     <div className="w-full justify-center flex">
       <div className="max-w-3xl flex items-center flex-col gap-3 my-12">
         <div className="text-3xl font-bold selection:bg-purple-300 text-center p-0">
-          Story
+          About
         </div>
         <p className="w-3/4 text-center text-lg selection:bg-purple-400 ">
           little about me. also, i create web so i am spiderman 🕷.
@@ -22,7 +22,7 @@ function Story() {
           <span className="flex-1 bg-balck text-gray-400">───────────</span>
         </div>
 
-        <div className="rounded-3xl shadow-xl flex flex-col my-0 p-0">
+        <div className="rounded-3xl shadow-xl flex flex-col my-0 mx-2 p-0">
           <div className="w-full h-full relative rounded-3xl">
             <BorderBeam size={350} duration={9} delay={9} />
             <Image
@@ -119,4 +119,4 @@ function Story() {
   );
 }
 
-export default Story;
+export default About;

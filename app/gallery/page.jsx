@@ -6,7 +6,7 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 
-const images = Array.from({ length: 9 }, (_, i) => {
+const images = Array.from({ length: 19 }, (_, i) => {
   const isLandscape = i % 2 === 0;
   const width = isLandscape ? 800 : 600;
   const height = isLandscape ? 600 : 800;
@@ -33,10 +33,12 @@ function Gallery() {
         </div>
       </div>
 
-      <div className="flex max-w-3xl justify-center flex-col gap-2 mt-12 ">
+      <div className="flex max-w-3xl justify-center flex-col gap-3 mt-12 ">
         <div className="card card0 cursor-cell">
           <div className="borders">
-            <h2 className="text-lg font-semibold">Polaki Sai Kiran</h2>
+            <h2 className="text-lg font-semibold selection:bg-purple-400">
+              Polaki Sai Kiran
+            </h2>
             <div className="icons">
               <Link
                 href={"https://www.instagram.com/polaki_kiran/"}
