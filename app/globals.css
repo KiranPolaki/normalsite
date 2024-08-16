@@ -67,3 +67,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to your global CSS file or a specific component's CSS file */
+
+.borders {
+  @apply h-[369px] w-[290px] bg-transparent rounded-[10px] transition-all relative;
+}
+
+.borders:hover {
+  @apply border border-white;
+}
+
+.card {
+  @apply h-[379px] w-[300px] bg-gray-800 rounded-[10px] transition-all overflow-hidden bg-black shadow-[0_70px_63px_-60px_#000000] flex justify-center items-center relative;
+}
+
+.card0 {
+  @apply bg-center bg-no-repeat bg-[url('/profile.JPG')] bg-[length:300px] transition-all duration-1000 ease-in-out;
+}
+
+.card0:hover {
+  @apply bg-left bg-[length:600px];
+}
+
+h2 {
+  @apply font-sans text-white m-5 opacity-0 transition-opacity;
+}
+
+.card0:hover h2 {
+  @apply opacity-100;
+}
+
+.fa {
+  @apply opacity-0 transition-opacity;
+}
+
+.card0:hover .fa {
+  @apply opacity-100;
+}
+
+.icons {
+  @apply absolute fill-white text-white h-[130px] top-[200px] w-[50px] flex flex-col items-center justify-around;
+}
