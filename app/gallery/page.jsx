@@ -5,6 +5,7 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
+import profile from "../../public/profile.jpg";
 
 const images = Array.from({ length: 19 }, (_, i) => {
   const isLandscape = i % 2 === 0;
@@ -34,7 +35,12 @@ function Gallery() {
       </div>
 
       <div className="flex max-w-3xl justify-center flex-col gap-3 mt-12 ">
-        <div className="card card0 cursor-cell">
+        <div
+          className="card card0 cursor-cell"
+          style={{
+            backgroundImage: `url(${profile.src})`,
+          }}
+        >
           <div className="borders">
             <h2 className="text-lg font-semibold selection:bg-purple-400">
               Polaki Sai Kiran

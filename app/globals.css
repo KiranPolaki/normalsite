@@ -83,7 +83,7 @@
 }
 
 .card0 {
-  @apply bg-center bg-no-repeat bg-[url('/profile.JPG')] bg-[length:300px] transition-all duration-1000 ease-in-out;
+  @apply bg-center bg-no-repeat  bg-[length:300px] transition-all duration-1000 ease-in-out;
 }
 
 .card0:hover {
