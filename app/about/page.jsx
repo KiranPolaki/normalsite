@@ -2,6 +2,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 
 import Image from "next/image";
 import Link from "next/link";
+import setup from "../../public/setup.JPG";
 
 function About() {
   return (
@@ -29,7 +30,7 @@ function About() {
               width={1100}
               height={700}
               alt={"setup image"}
-              src={"/setup.JPG"}
+              src={setup.src}
               className="rounded-3xl p-0.1 shadow-2xl "
             />
           </div>
