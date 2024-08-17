@@ -1,0 +1,94 @@
+"use client";
+import { useState } from "react";
+import { Badge } from "../ui/badge";
+
+function WorkExperience() {
+  const [workExp, setWorkExp] = useState([
+    {
+      name: "Freelance & Opensource",
+      role: "Full Stack Developer",
+      start: "Mar, 2024",
+      end: "present",
+      description:
+        "Implemented efficient multi-language release management, containerized deployments, and process automation, significantly improving release efficiency and reducing repetitive tasks using Azure DevOps, Docker, Kubernetes, AWS ECS/ECR, and Power Automate.",
+      technologies: [
+        "nextjs",
+        "react",
+        "javascript",
+        "express",
+        "cloudflare",
+        "postgresql",
+        "mongodb",
+        "prisma",
+        "auth",
+        "graphql",
+      ],
+    },
+    {
+      name: "Kroll",
+      role: "Junior Devops Engineer",
+      start: "Sep, 2023",
+      end: "present",
+      description:
+        "Developed landing pages for Ed-tech, Restaurants, and Startups, integrating payments and analytics, achieving over 1,000+ site views each. Enhanced user experience and functionality in projects like an Interview Management application and a CS e-learning platform.",
+      technologies: [
+        "azure",
+        "devops",
+        "docker",
+        "kubernetes",
+        "aws",
+        "ecs/ecr",
+        "s3",
+        "powerautomate",
+        "react",
+      ],
+    },
+    {
+      name: "Kroll",
+      role: "Servicenow Intern",
+      start: "Jan, 2023",
+      end: "Aug, 2023",
+      description:
+        "Contributed to real-time CMDB projects, delivering solutions for over 10,000 records. Enhanced user experience by implementing functional client support pages with scripts.",
+      technologies: ["typescript", "clientscript", "businessscript", "cms"],
+    },
+  ]);
+  return (
+    <div>
+      {workExp.map((work) => (
+        <div className="relative pl-8 sm:pl-32 py-4 group">
+          <div className=" text-gray-400 text-md font-semibold tracking-wider p-0 selection:text-purple-900">
+            {work.name.toUpperCase()}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
+              {work.start}
+            </time>
+            <div className="text-xl font-bold text-slate-900 dark:text-slate-100">
+              {work.role}
+            </div>
+          </div>
+
+          <div className="text-slate-500 dark:text-slate-400 text-md">
+            {work.description}
+          </div>
+          <div className="gap-1 flex w-full flex-wrap mt-2">
+            {work.technologies.map((tech) => {
+              return (
+                <Badge
+                  variant="outline"
+                  className="cursor-pointer hover:bg-purple-400 hover:text-white"
+                >
+                  {tech}
+                </Badge>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default WorkExperience;

@@ -4,11 +4,11 @@ function Footer() {
   return (
     <div className="my-10 w-full flex items-center justify-center">
       <div className="max-w-3xl flex flex-col items-center">
-        <div className="flex items-center gap-1 ">
+        <div className="flex items-center gap-1 text-sm md:text-md">
           <p className="flex items-center">©️saiiik</p> ✦{" "}
           <p>polaki sai kiran</p>
         </div>
-        <p className="text-gray-400 text-sm mb-12">
+        <p className="text-gray-400 text-xs md:text-sm mb-12">
           Designed in Figma, Coded in Nextjs and deployed on Vercel
         </p>
         <div className="flex items-center gap-2 justify-center select-none text-gray-400">
