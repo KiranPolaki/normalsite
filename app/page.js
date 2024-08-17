@@ -1,6 +1,6 @@
 import WorkExperience from "@/components/work/WorkExperience";
 import Image from "next/image";
-import profile from "../public/story.JPG";
+import story from "../public/story.jpeg";
 import Link from "next/link";
 
 export default function Home() {
@@ -12,9 +12,10 @@ export default function Home() {
             <div className="w-28 h-28  c6bo rounded-full bg-cover">
               <Image
                 alt="sai"
+                placeholder="blur"
                 width={200}
                 height={200}
-                src={profile.src}
+                src={story}
                 className="rounded-full"
               />
             </div>
