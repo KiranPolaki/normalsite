@@ -55,8 +55,8 @@ function WorkExperience() {
   ]);
   return (
     <div>
-      {workExp.map((work) => (
-        <div className="relative pl-8 sm:pl-32 py-4 group">
+      {workExp.map((work, i) => (
+        <div className="relative pl-8 sm:pl-32 py-4 group" key={i}>
           <div className=" text-gray-400 text-md font-semibold tracking-wider p-0 selection:text-purple-900">
             {work.name.toUpperCase()}
           </div>
@@ -74,9 +74,10 @@ function WorkExperience() {
             {work.description}
           </div>
           <div className="gap-1 flex w-full flex-wrap mt-2">
-            {work.technologies.map((tech) => {
+            {work.technologies.map((tech, i) => {
               return (
                 <Badge
+                  key={i}
                   variant="outline"
                   className="cursor-pointer hover:bg-purple-400 hover:text-white"
                 >

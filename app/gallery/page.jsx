@@ -6,6 +6,7 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import profile from "../../public/profile.jpg";
+import Image from "next/image";
 
 const images = Array.from({ length: 19 }, (_, i) => {
   const isLandscape = i % 2 === 0;
