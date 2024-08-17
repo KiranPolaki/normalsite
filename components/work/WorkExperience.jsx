@@ -72,8 +72,8 @@ function WorkExperience() {
               {work.role}
               {work.current ? (
                 <div className="text-xs font-normal flex items-center">
-                  <div className="border px-1 rounded-lg bg-blue-400 text-white">
-                    curent
+                  <div className=" px-1 rounded-lg bg-emerald-100 text-emerald-600">
+                    current
                   </div>
                 </div>
               ) : (
