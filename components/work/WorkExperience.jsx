@@ -23,6 +23,7 @@ function WorkExperience() {
         "auth",
         "graphql",
       ],
+      current: true,
     },
     {
       name: "Kroll",
@@ -42,6 +43,7 @@ function WorkExperience() {
         "powerautomate",
         "react",
       ],
+      current: true,
     },
     {
       name: "Kroll",
@@ -51,6 +53,7 @@ function WorkExperience() {
       description:
         "Contributed to real-time CMDB projects, delivering solutions for over 10,000 records. Enhanced user experience by implementing functional client support pages with scripts.",
       technologies: ["typescript", "clientscript", "businessscript", "cms"],
+      current: false,
     },
   ]);
   return (
@@ -65,8 +68,17 @@ function WorkExperience() {
             <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full">
               {work.start}
             </time>
-            <div className="text-xl font-bold text-slate-900 dark:text-slate-100">
+            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 flex gap-2">
               {work.role}
+              {work.current ? (
+                <div className="text-xs font-normal flex items-center">
+                  <div className="border px-1 rounded-lg bg-blue-400 text-white">
+                    curent
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
 
