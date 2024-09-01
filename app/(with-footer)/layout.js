@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
+import "../globals.css";
 import NavBar from "@/components/header/NavBar";
 import Footer from "@/components/footer/Footer";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <div className="z-30 sticky bottom-6 pr-7 flex justify-end w-full">
             <div class="button-container">
-              <button class="brutalist-button openai">
+              <Link href={"/ai"} class="brutalist-button openai">
                 <div class="openai-logo bg-background">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
                   <span>Ask anything</span>
                   <span>About me</span>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </ThemeProvider>

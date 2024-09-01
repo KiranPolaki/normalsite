@@ -1,6 +1,6 @@
 import WorkExperience from "@/components/work/WorkExperience";
 import Image from "next/image";
-import story from "../public/story.jpeg";
+import story from "../../public/story.jpeg";
 import Link from "next/link";
 import Work from "@/components/work/Work";
 
