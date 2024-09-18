@@ -44,7 +44,7 @@ function GetYears() {
               key={year}
               onClick={() => handleYearChange(year)}
             >
-              {year != 1 ? year : "recet"}
+              {year != 1 ? year : "recent"}
             </Button>
           );
         })}
