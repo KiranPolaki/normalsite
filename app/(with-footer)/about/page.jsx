@@ -2,7 +2,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 
 import Image from "next/image";
 import Link from "next/link";
-import setup from "../../public/setup.jpeg";
+import setup from "../../../public/setup.jpeg";
 import BlurFade from "@/components/magicui/blur-fade";
 
 function About() {

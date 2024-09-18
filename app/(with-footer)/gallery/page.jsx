@@ -5,7 +5,7 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
-import profile from "../../public/profile.jpeg";
+import profile from "../../../public/profile.jpeg";
 import Image from "next/image";
 
 const images = Array.from({ length: 19 }, (_, i) => {
