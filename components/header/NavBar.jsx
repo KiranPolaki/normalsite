@@ -94,7 +94,7 @@ function NavBar() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-8 text-white"
+                      className="size-8 text-foregroundw"
                     >
                       <path
                         strokeLinecap="round"

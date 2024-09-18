@@ -41,13 +41,13 @@ function GetYears() {
           {yearState === 0 || yearState === 1 ? (
             <GitHubCalendar
               username="KiranPolaki"
-              blockSize={!isMobile ? 8 : 3}
+              blockSize={!isMobile ? 8 : 4}
               colorScheme={theme === "dark" ? "dark" : "light"}
             />
           ) : (
             <GitHubCalendar
               username="KiranPolaki"
-              blockSize={!isMobile ? 8 : 3}
+              blockSize={!isMobile ? 8 : 4}
               year={yearState}
               colorScheme={theme === "dark" ? "dark" : "light"}
             />
