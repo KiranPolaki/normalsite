@@ -10,7 +10,7 @@ function WorkExperience() {
       start: "Mar, 2024",
       end: "present",
       description:
-        "Implemented efficient multi-language release management, containerized deployments, and process automation, significantly improving release efficiency and reducing repetitive tasks using Azure DevOps, Docker, Kubernetes, AWS ECS/ECR, and Power Automate.",
+        "Developed landing pages for Ed-tech, Restaurants, and Startups, integrating payments and analytics, achieving over 1,000+ site views each. Enhanced user experience and functionality in projects like an Interview Management application and a CS e-learning platform.",
       technologies: [
         "nextjs",
         "react",
@@ -31,7 +31,7 @@ function WorkExperience() {
       start: "Sep, 2023",
       end: "present",
       description:
-        "Developed landing pages for Ed-tech, Restaurants, and Startups, integrating payments and analytics, achieving over 1,000+ site views each. Enhanced user experience and functionality in projects like an Interview Management application and a CS e-learning platform.",
+        "Implemented efficient multi-language release management, containerized deployments, and process automation, significantly improving release efficiency and reducing repetitive tasks using Azure DevOps, Docker, Kubernetes, AWS ECS/ECR, and Power Automate.",
       technologies: [
         "azure",
         "devops",
