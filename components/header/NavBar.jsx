@@ -9,15 +9,15 @@ function NavBar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const sidebarRef = useRef(null);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsSticky(window.scrollY > 0);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   // return () => {
-  //   //   window.removeEventListener("scroll", handleScroll);
-  //   // };
-  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setSidebarOpen(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResise = () => {
@@ -42,6 +42,23 @@ function NavBar() {
       document.removeEventListener("mousedown", handleClickOutSide);
     };
   }, []);
+
+  const handleScrollOutSide = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setSidebarOpen(false);
+    }
+  };
+  useEffect(() => {
+    if (sidebarOpen) {
+      window.addEventListener("scroll", handleScrollOutSide);
+    } else {
+      window.removeEventListener("scroll", handleScrollOutSide);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollOutSide);
+    };
+  }, [sidebarOpen]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -79,15 +96,15 @@ function NavBar() {
 
           <div
             ref={sidebarRef}
-            className={`fixed transform top-0 right-0 w-64 h-full shadow-lg ease-in-out transition-transform duration-500 ${
+            className={`fixed transform top-0 right-0 w-64 h-full shadow-lg ease-in-out transition-transform duration-300 ${
               sidebarOpen
-                ? "translate-x-0 backdrop-filter backdrop-blur-lg bg-opacity-30"
+                ? "translate-x-0 backdrop-filter backdrop-blur-lg bg-opacity-30 "
                 : "translate-x-full backdrop-filter backdrop-blur-lg bg-opacity-30"
             }`}
           >
             <div>
               <div className="relative ">
-                <div className="flex justify-end gap-28 pt-9 pr-9 mb-9 pl-4">
+                <div className="md:hidden flex justify-end gap-28 pt-9 pr-9 mb-9 pl-4">
                   <button onClick={toggleSidebar} className="pr-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +123,7 @@ function NavBar() {
                   </button>
                 </div>
                 <div>
-                  <div className="flex flex-col gap-7 font-semibold items-end p-12 w-full text-md">
+                  <div className="md:hidden flex flex-col gap-7 font-semibold items-end p-12 w-full text-md">
                     <Link href={"/works"}>
                       <div className="cursor-pointer font-semibold font-inter">
                         work
