@@ -1,7 +1,12 @@
+"use client";
 import Work from "@/components/work/Work";
 import GitHub from "./_components/Github";
+import { useEffect } from "react";
 
 function Works() {
+  useEffect(() => {
+    window.location.pathname;
+  }, []);
   return (
     <div className="w-full">
       <div className="w-full flex items-center justify-center h-full">
