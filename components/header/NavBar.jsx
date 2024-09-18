@@ -45,7 +45,11 @@ function NavBar() {
             </Link>
           </div>
           <div className="hidden md:flex gap-4 items-center w-full text-md">
-            <div className="cursor-pointer font-semibold font-inter">work</div>
+            <Link href={"/works"}>
+              <div className="cursor-pointer font-semibold font-inter">
+                work
+              </div>
+            </Link>
             <div className="cursor-pointer font-semibold font-inter">
               timeline
             </div>

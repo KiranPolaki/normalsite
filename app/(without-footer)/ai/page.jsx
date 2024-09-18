@@ -1,10 +1,15 @@
 function page() {
   return (
     <div>
+      <div className="w-full flex items-center justify-center h-full">
+        <div className="w-4/5 h-full flex items-center justify-center bg-red-500 md:max-w-2xl rounded-b-lg text-white font-semibold p-2">
+          work in progress
+        </div>
+      </div>
       <div className={`w-full flex justify-center h-16 mt-3`}>
         <div className="w-full max-w-3xl absolute bottom-0 flex items-center flex-col">
           <div className="max-w-[45rem] bg-[#29253e] h-7 w-full rounded-t-lg text-xs p-2 tracking-wider flex font-semibold justify-between items-center">
-            <span className="font-mono">
+            <span className="font-mono text-slate-300">
               Under Development for better response&apos;s :)
             </span>
             <button onClick={""}>
@@ -18,7 +23,7 @@ function page() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                classname="lucide lucide-x"
+                className="lucide lucide-x"
               >
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />

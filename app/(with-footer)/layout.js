@@ -26,13 +26,13 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <div className="z-30 sticky bottom-6 pr-7 flex justify-end w-full">
-            <div class="button-container">
-              <Link href={"/ai"} class="brutalist-button openai">
-                <div class="openai-logo bg-background">
+            <div className="button-container">
+              <Link href={"/ai"} className="brutalist-button openai">
+                <div className="openai-logo bg-background">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    class="openai-icon"
+                    className="openai-icon"
                   >
                     <path
                       fill="#FFA589"
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
                     ></path>
                   </svg>
                 </div>
-                <div class="button-text">
+                <div className="button-text">
                   <span>Ask anything</span>
                   <span>About me</span>
                 </div>

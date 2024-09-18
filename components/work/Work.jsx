@@ -112,7 +112,7 @@ function Work() {
             <div className="p-3">
               <div className="flex gap-1 items-center">
                 <span className="text-sm font-bold">{project.name}</span>
-                {project.ongoing ? <span class="blink_me"></span> : <></>}
+                {project.ongoing ? <span className="blink_me"></span> : <></>}
               </div>
               <div className="justify-content h-32 text-xs/[14px] py-2 text-slate-500 dark:text-slate-400 ">
                 {project.description}

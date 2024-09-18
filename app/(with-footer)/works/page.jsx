@@ -1,5 +1,13 @@
+import GitHub from "./_components/Github";
+
 function Works() {
-  return <div></div>;
+  return (
+    <div>
+      <div>
+        <GitHub />
+      </div>
+    </div>
+  );
 }
 
 export default Works;
