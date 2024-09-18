@@ -76,12 +76,13 @@ function NavBar() {
               </svg>
             </Link>
           </div>
+
           <div
             ref={sidebarRef}
-            className={`fixed transform top-0 right-0 w-64 h-full shadow-lg ease-in-out transition-transform duration-300 ${
+            className={`fixed transform top-0 right-0 w-64 h-full shadow-lg ease-in-out transition-transform duration-500 ${
               sidebarOpen
                 ? "translate-x-0 backdrop-filter backdrop-blur-lg bg-opacity-30"
-                : "translate-x-full"
+                : "translate-x-full backdrop-filter backdrop-blur-lg bg-opacity-30"
             }`}
           >
             <div>
@@ -105,7 +106,7 @@ function NavBar() {
                   </button>
                 </div>
                 <div>
-                  <div className="flex flex-col gap-6 items-center w-full text-md">
+                  <div className="flex flex-col gap-7 font-semibold items-end p-12 w-full text-md">
                     <Link href={"/works"}>
                       <div className="cursor-pointer font-semibold font-inter">
                         work
