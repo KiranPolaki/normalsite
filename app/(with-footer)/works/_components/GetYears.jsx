@@ -17,6 +17,25 @@ function GetYears() {
 
   return (
     <div className="flex flex-col gap-8">
+      <div>
+        <p className="text-gray-400 text-xl font-semibold tracking-wider p-0 selection:text-purple-900">
+          CONTRIBUTIONS
+        </p>
+      </div>
+      <div className="flex gap-5">
+        {years.map((year) => {
+          return (
+            <Button
+              variant="outline"
+              className="shadow-md"
+              key={year}
+              onClick={() => handleYearChange(year)}
+            >
+              {year != 1 ? year : "recent"}
+            </Button>
+          );
+        })}
+      </div>
       <Suspense fallback="Loadin...">
         <>
           {yearState === 0 || yearState === 1 ? (
@@ -35,20 +54,6 @@ function GetYears() {
           )}
         </>
       </Suspense>
-      <div className="flex gap-5">
-        {years.map((year) => {
-          return (
-            <Button
-              variant="outline"
-              className="shadow-md"
-              key={year}
-              onClick={() => handleYearChange(year)}
-            >
-              {year != 1 ? year : "recent"}
-            </Button>
-          );
-        })}
-      </div>
     </div>
   );
 }
