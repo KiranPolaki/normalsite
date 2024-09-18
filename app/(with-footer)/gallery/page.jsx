@@ -18,6 +18,11 @@ const images = Array.from({ length: 19 }, (_, i) => {
 function Gallery() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex items-center justify-center h-full">
+        <div className="w-4/5 h-full flex items-center justify-center bg-red-500 md:max-w-2xl rounded-b-lg text-white font-semibold p-2">
+          work in progress
+        </div>
+      </div>
       <div className="max-w-3xl flex items-center flex-col gap-3 mt-12">
         <div className="text-3xl font-bold selection:bg-purple-300 text-center p-0">
           Gallery

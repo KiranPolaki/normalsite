@@ -2,10 +2,13 @@
 import DarkLightMode from "@/components/header/DarkLightMode";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function NavBar() {
   const [isSticky, setIsSticky] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
@@ -15,6 +18,35 @@ function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleResise = () => {
+      if (window.innerWidth > 1023) {
+        setSidebarOpen(false);
+      }
+      window.addEventListener("resize", handleResise);
+      return () => {
+        window.removeEventListener("resize", handleResise);
+      };
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutSide = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutSide);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSide);
+    };
+  }, []);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <div className={`w-full flex justify-center h-16 mt-3`}>
       <div
@@ -43,6 +75,76 @@ function NavBar() {
                 ></path>{" "}
               </svg>
             </Link>
+          </div>
+          <div
+            ref={sidebarRef}
+            className={`fixed transform top-0 right-0 w-64 h-full shadow-lg ease-in-out transition-transform duration-300 ${
+              sidebarOpen
+                ? "translate-x-0 backdrop-filter backdrop-blur-lg bg-opacity-30"
+                : "translate-x-full"
+            }`}
+          >
+            <div>
+              <div className="relative ">
+                <div className="flex justify-end gap-28 pt-9 pr-9 mb-9 pl-4">
+                  <button onClick={toggleSidebar} className="pr-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-8 text-white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18 18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div>
+                  <div className="flex flex-col gap-6 items-center w-full text-md">
+                    <Link href={"/works"}>
+                      <div className="cursor-pointer font-semibold font-inter">
+                        work
+                      </div>
+                    </Link>
+                    <div className="cursor-pointer font-semibold font-inter">
+                      timeline
+                    </div>
+                    <Link href={"/about"}>
+                      <div className="cursor-pointer font-semibold font-inter">
+                        about
+                      </div>
+                    </Link>
+                    <Link href={"/gallery"}>
+                      <div className="cursor-pointer font-semibold font-inter">
+                        gallery
+                      </div>
+                    </Link>
+                    {/* <div className="flex cursor-pointer font-semibold font-inter items-center">
+                      more
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-chevron-down"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="hidden md:flex gap-4 items-center w-full text-md">
             <Link href={"/works"}>
@@ -149,7 +251,8 @@ function NavBar() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="lucide lucide-menu cursor-pointer"
+            className="lucide lucide-menu cursor-pointer lg:hidden"
+            onClick={toggleSidebar}
           >
             <line x1="4" x2="20" y1="12" y2="12" />
             <line x1="4" x2="20" y1="6" y2="6" />

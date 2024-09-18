@@ -5,11 +5,11 @@ import one from "../../public/one.png";
 import two from "../../public/two.png";
 import three from "../../public/three.png";
 import four from "../../public/four.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { GitHubLogoIcon, GlobeIcon, StackIcon } from "@radix-ui/react-icons";
-import { isMobile } from "react-device-detect";
+import { isMobile as detectMobile } from "react-device-detect";
 
 function Work() {
   const [projects, setProjects] = useState([
@@ -93,6 +93,14 @@ function Work() {
       img: four,
     },
   ]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setIsMobile(detectMobile);
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   return (
     <div className="w-full">
       <div className="p-4 flex gap-5 flex-wrap justify-center">
@@ -169,7 +177,7 @@ function Work() {
             {projects.map((project, i) => (
               <div
                 key={i}
-                className="hover:border hover:bg-slate-200 rounded-lg"
+                className="hover:border light:hover:bg-slate-200 rounded-lg"
               >
                 <div className="flex w-full items-center justify-center p-3 gap-4">
                   <div>
