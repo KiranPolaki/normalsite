@@ -50,7 +50,7 @@ export default function Home() {
           <div className="text-xl mt-10">
             I create web so i am spiderman. my current primary field of work is
             devops and yes i&apos;m a fullstack web developer. as of now i am
-            21, rn living in hyderabad. And now, expoloring web3
+            21, rn living in hyderabad. And now, exploring web3.
           </div>
           <div className="mt-10">
             <div className="flex justify-between items-center">
