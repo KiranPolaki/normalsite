@@ -19,6 +19,7 @@ import {
   InfoCircledIcon, // For Project Overview
 } from "@radix-ui/react-icons";
 import { notFound } from "next/navigation"; // For 404
+import RichCaseStudy from "./_components/RichCaseStudy";
 
 // Helper to get project data
 const getProjectBySlug = (slug) => {
@@ -38,6 +39,18 @@ export default function CaseStudyPage({ params }) {
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject =
     currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+
+  // Newer case studies carry a `media` block (configurable screenshots) and the
+  // long-form sections. They render through the richer template.
+  if (project.media) {
+    return (
+      <RichCaseStudy
+        project={project}
+        prevProject={prevProject}
+        nextProject={nextProject}
+      />
+    );
+  }
 
   const heroImage =
     project.images && project.images.length > 0 ? project.images[0] : null;

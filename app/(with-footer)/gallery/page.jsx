@@ -23,7 +23,7 @@ function Gallery() {
           work in progress
         </div>
       </div>
-      <div className="max-w-3xl flex items-center flex-col gap-3 mt-12">
+      <div className="page-shell flex items-center flex-col gap-3 mt-12">
         <div className="text-3xl font-bold selection:bg-purple-300 text-center p-0">
           Gallery
         </div>
@@ -40,7 +40,7 @@ function Gallery() {
         </div>
       </div>
 
-      <div className="flex max-w-3xl justify-center flex-col gap-3 mt-12 ">
+      <div className="page-shell flex justify-center flex-col gap-3 mt-12">
         <div
           className="card card0 cursor-cell"
           style={{
@@ -92,7 +92,7 @@ function Gallery() {
         <span className="flex-1 bg-balck text-gray-400">───────────</span>
       </div>
 
-      <section id="photos" className="max-w-3xl mt-12 p-4">
+      <section id="photos" className="page-shell mt-12 py-4">
         <div className="columns-2 gap-4 sm:columns-3">
           {images.map((imageUrl, idx) => (
             <BlurFade key={imageUrl} delay={0.25 + idx * 0.05} inView>

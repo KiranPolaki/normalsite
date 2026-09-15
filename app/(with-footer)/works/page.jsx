@@ -16,15 +16,11 @@ function Works() {
       </div> */}
       <div className="w-full">
         <GitHub />
-        <div className="w-full flex items-center justify-center my-4 md:mx-0 mx-7">
-          <div className="max-w-3xl w-full flex items-center justify-start">
-            <p className="text-gray-400 text-xl font-semibold tracking-wider p-0 ml-6 selection:text-purple-900 text-left">
-              WORK
-            </p>
-          </div>
+        <div className="page-shell mt-14 mb-5">
+          <p className="eyebrow">Work</p>
         </div>
-        <div className="w-full flex items-center justify-center flex-col md:px-0 px-7">
-          <div className="max-w-3xl w-full h-full flex flex-col gap-5 items-center justify-center">
+        <div className="page-shell pb-20">
+          <div className="w-full flex flex-col gap-5">
             {/* <p className="text-gray-400 text-xl font-semibold tracking-wider p-0 selection:text-purple-900 mb-2">
             WORK
           </p> */}

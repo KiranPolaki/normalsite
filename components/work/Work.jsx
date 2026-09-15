@@ -47,7 +47,7 @@ function Work() {
           <>
             {projects.map((project, i) => (
               <div
-                className="group border border-gray-200 dark:border-gray-700 rounded-3xl cursor-pointer hover:shadow-lg transition-all duration-300 ease-out bg-white dark:bg-zinc-900 overflow-hidden"
+                className="group surface surface-hover rounded-3xl cursor-pointer hover:shadow-lg transition-all duration-300 ease-out overflow-hidden"
                 key={i}
               >
                 <div className="relative bottom-6 bg-gradient-to-br dark:to-zinc-700 p-6 z-20 -mb-8">
@@ -131,7 +131,7 @@ function Work() {
                 <div className=" relative bg-white dark:bg-black p-5 space-y-4 z-40">
                   {/* Title and Status */}
                   <div className="flex gap-2 items-center z-40">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand transition-colors">
                       {project.name}
                     </h3>
                     {project.ongoing && (
@@ -168,7 +168,7 @@ function Work() {
                         {project.features.slice(0, 3).map((feature, idx) => (
                           <span
                             key={idx}
-                            className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
+                            className="chip text-xs"
                           >
                             {feature}
                           </span>
@@ -192,7 +192,7 @@ function Work() {
                         <Badge
                           variant="outline"
                           key={idx}
-                          className="hover:bg-purple-500 hover:text-white hover:border-purple-500 transition-all duration-200 text-xs"
+                          className="hover:bg-brand hover:text-brand-foreground hover:border-brand transition-all duration-200 text-xs"
                         >
                           {tech}
                         </Badge>
@@ -204,7 +204,7 @@ function Work() {
                   <div className="flex gap-2 pt-2">
                     {project.caseStudy && project.caseStudyLink && (
                       <Link href={project.caseStudyLink} className="flex-1">
-                        <Badge className="flex gap-2 w-full bg-purple-100 text-purple-700 py-2 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300 dark:hover:bg-purple-800 justify-center transition-all duration-200">
+                        <Badge className="flex gap-2 w-full justify-center py-2 bg-brand/10 text-brand border-brand/30 hover:bg-brand/20 transition-colors">
                           <ReaderIcon className="w-4 h-4" />
                           Case Study
                         </Badge>
@@ -237,7 +237,7 @@ function Work() {
             {projects.map((project, i) => (
               <div
                 key={i}
-                className="border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-2xl transition-all duration-300 overflow-hidden bg-white dark:bg-gray-900"
+                className="surface surface-hover rounded-2xl transition-all duration-300 overflow-hidden"
               >
                 <div className="p-4">
                   <div className="flex gap-4 items-start">
@@ -262,7 +262,7 @@ function Work() {
                               key={idx}
                               className={`w-1 h-1 rounded-full ${
                                 (currentImageIndex[i] || 0) === idx
-                                  ? "bg-purple-500"
+                                  ? "bg-brand"
                                   : "bg-gray-300 dark:bg-gray-600"
                               }`}
                             />
@@ -278,7 +278,7 @@ function Work() {
                           <h3 className="text-base font-bold text-gray-900 dark:text-white">
                             {project.name}
                           </h3>
-                          <Badge className="mt-1 bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-xs">
+                          <Badge className="mt-1 text-xs bg-brand/10 text-brand border-brand/30">
                             {project.category}
                           </Badge>
                         </div>
@@ -318,7 +318,7 @@ function Work() {
                       <div className="flex gap-2 flex-wrap">
                         {project.caseStudy && project.caseStudyLink && (
                           <Link href={project.caseStudyLink}>
-                            <Badge className="flex gap-1 bg-purple-100 text-purple-700 py-1 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-300 text-xs">
+                            <Badge className="flex gap-1 py-1 text-xs bg-brand/10 text-brand border-brand/30 hover:bg-brand/20 transition-colors">
                               <ReaderIcon className="w-3 h-3" />
                               Case Study
                             </Badge>

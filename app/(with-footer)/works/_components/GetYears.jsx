@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Suspense, useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { isMobile } from "react-device-detect";
@@ -18,21 +17,22 @@ function GetYears() {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <p className="text-gray-400 text-xl font-semibold tracking-wider p-0 selection:text-purple-900">
-          CONTRIBUTIONS
-        </p>
+        <p className="eyebrow">Contributions</p>
       </div>
-      <div className="flex gap-5">
+      <div className="tabs self-start">
         {years.map((year) => {
+          const isActive =
+            yearState === year || (yearState === 0 && year === 1);
           return (
-            <Button
-              variant="outline"
-              className="shadow-md"
+            <button
+              type="button"
+              className={`tab ${isActive ? "tab-active" : ""}`}
               key={year}
+              aria-pressed={isActive}
               onClick={() => handleYearChange(year)}
             >
               {year != 1 ? year : "recent"}
-            </Button>
+            </button>
           );
         })}
       </div>
